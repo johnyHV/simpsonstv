@@ -12,7 +12,13 @@ My changes, all otested on the RPI ZERO:
 - added button to 3D model VCR
 - used different speaker
 - used 4" HDMI waveshare LCD [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
-  
+- design improvement. is more solid
+
+---
+3D model
+---
+[here](https://www.thingiverse.com/thing:5147344)
+
 ---
 HW parts
 ---
