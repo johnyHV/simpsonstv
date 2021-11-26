@@ -157,7 +157,11 @@ WantedBy=multi-user.target
 sudo systemctl enable tvbutton.service
 sudo systemctl enable tvplayer.service
 ```
-17. **Reboot system**
+17. **Update permission for script**
+```
+sudo chmod +x /home/pi/simpsonstv/dbuscontrol.sh
+```
+19. **Reboot system**
 ```
 sudo reboot
 ```
