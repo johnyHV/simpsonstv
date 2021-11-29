@@ -86,9 +86,12 @@ My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com
 <img src="docu/HW_parts/led.jpg" width="256"/>
 
 - USB A connector [here](https://www.aliexpress.com/item/4000806581109.html?spm=a2g0o.productlist.0.0.2c402a18K0POfK&algo_pvid=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d&algo_exp_id=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d-11&pdp_ext_f=%7B%22sku_id%22%3A%2210000008096938788%22%7D)
-<img src="docu/HW_parts/usbA.jpg" width="256"/>
+<img src="docu/HW_parts/pin_header.jpg" width="256"/>
 
 - Wires
+
+- long pin header 25mm, male, 2.54MM PITCH [here](https://www.aliexpress.com/item/32851444441.html)
+<img src="docu/HW_parts/usbA.jpg" width="256"/>
 
 ---
 <a name="hw_construction"></a>
@@ -124,6 +127,48 @@ LED
 LED FOR INDICATE USB COMMUNICATION ANODA -> GPIO27
 LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 ```
+# Soldering and connecting components
+1. Connect switch to LCD display (for enable/disable blacklight). Switch the switch on the LCD to the off position 
+<img src="docu/hw/LCD_1.jpg" width="512"/>
+<img src="docu/hw/LCD_2.jpg" width="512"/>
+
+2. Connect switch to RPI. for RPI pause information
+<img src="docu/hw/RPI_switch.jpg" width="512"/>
+
+3. Solder 4pcs long pin header male to RPI board, to connect power to LCD from RPI. long connectors are used for better air circulation, and cooling RPI. You can use heatsink for better cooling
+<img src="docu/hw/lcd_supply1.jpg" width="512"/>
+<img src="docu/hw/lcd_supply2.jpg" width="512"/>
+
+4. Connect speaker to potentiometer and audio amplifier.
+<img src="docu/hw/audio1.jpg" width="512"/>
+
+5. Connect audio amplifier to RPI
+<img src="docu/hw/audio2.jpg" width="512"/>
+A+ -> audio input -> RPI pin GPIO19
+A- -> audio GND -> RPI pin GND
+SD -> shut down -> RPI pin GPIO13
+Vin -> voltage input -> RPI pin +5V
+Gnd -> ground -> RPI pin GND
+
+<img src="docu/hw/audio4.jpg" width="512"/>
+<img src="docu/hw/audio5.jpg" width="512"/>
+
+6. Connect 2.2uF capacitor during A+ and GND pin, for a clearer sound
+<img src="docu/hw/audio3.jpg" width="512"/>
+
+7. Connect HDMI cable
+<img src="docu/hw/hdmi.jpg" width="512"/>
+<img src="docu/hw/hdmi2.jpg" width="512"/>
+
+8.current view of HW
+<img src="docu/hw/total.jpg" width="512"/>
+
+9. Micro USB connector female
+<img src="docu/hw/microusb.jpg" width="512"/>
+
+9. Micro USB connector male
+<img src="docu/microUSB.jfif" width="512"/>
+<img src="docu/hw/microusbmale.jpg" width="512"/>
 
 ---
 <a name="instalation"></a>
