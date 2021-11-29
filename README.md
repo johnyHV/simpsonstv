@@ -13,6 +13,7 @@ My changes, all otested on the RPI ZERO:
 - used different speaker
 - used 4" HDMI waveshare LCD [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
 - design improvement. is more solid
+- added space for USB port in the 3D model, and script for autocopy movie from USB mass storage devices to RPI 
 
 ---
 3D model
@@ -77,7 +78,9 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 ---
 Instalation
 ---
-1. created file **wpa_supplicant.conf** in **boot** partition before insert microSD card and added to file
+1. Install OS to micro SD card. For install OS please use Raspberry PI installer [here](https://www.raspberrypi.com/software/)
+
+2. Create a file before inserting the micro SD card **wpa_supplicant.conf** in **boot** partition and add to file
 ```
 country=US
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -88,15 +91,15 @@ network={
     psk="NETWORK PASSWORD"
 }
 ```
-2. Created empty file **ssh** in **boot** partition before insert microSD card
-3. Now you can insert microSD card to RPI and power on. After booting is raspberry-pi automaticly connected to WI-FI
-4. **Update OS**
+3. Create a empty file **ssh** before inserting the micro SD card in **boot** partition. For enable SSH server after booting linux
+4. Now you can insert microSD card to RPI and power on. After booting is raspberry-pi automatically connected to WI-FI, with SSH server
+5. **Update OS**
 ```
 sudo apt-get update
 sudo apt-get upgrade
 rpi-update
 ```
-5. **LCD driver**. go to **/boot/config.txt** and add next lines for enable LCD drivers. Save, and reboot RPI. Manual for instalation manual is [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
+5. **LCD driver**. go to **/boot/config.txt** and add next lines for enable LCD drivers. Save, and reboot RPI. Manual for installation  manual is [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
 ```
 hdmi_group=2
 hdmi_mode=87
@@ -113,7 +116,7 @@ cd LCD-show/
 chmod +x LCD4-800x480-show
 ./LCD4-800x480-show
 ```
-7. **Enable audio.** added to file **/boot/config.txt**
+7. **Enable audio.** add to file **/boot/config.txt**
 ```
 dtparam=audio=on
 dtoverlay=audremap,enable_jack,pins_18_19
@@ -138,7 +141,7 @@ sudo apt-get install omxplayer git mc screen rsync
 cd ~
 git clone https://github.com/johnyHV/simpsonstv
 ```
-12. Now we need convert video to **mp4** video format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer. You can use different SW for converting video file.
+12. Now we need convert video file to **mp4** format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer. You can use different SW for converting video file. 
 ```
 ~/simpsonstv/video/
 sudo python encode.py
@@ -147,6 +150,8 @@ sudo python encode.py
 ```
 ~/simpsonstv/videos
 ```
+or you can use the USB mass storage devices to copy the video (step 18)
+
 14. **Service**. Service for management buttons
 ```
 sudo nano /etc/systemd/system/tvbutton.service
@@ -192,7 +197,7 @@ sudo systemctl enable tvplayer.service
 ```
 sudo chmod +x /home/pi/simpsonstv/dbuscontrol.sh
 ```
-18. **Version with USB**. Service for autocopy files from USB mass storage devices to RPI flash drive
+18. **Version with USB**. Service for auto copy files from USB mass storage devices to RPI flash drive. 
 ```
 sudo nano /etc/systemd/system/tvautocopy.service
 ```
@@ -219,3 +224,5 @@ sudo systemctl enable tvautocopy.service
 ```
 sudo reboot
 ```
+21. **Copy movie from USB**. We need create a folder **simpsonstv** on the USB key in root, and store movies to this folder. After booting linux, and insert USB key is automaticly started script for copy movies from FLASH drive to micro SD card. the LED near the USB port lights up during the copying process.
+**IMAGE**
