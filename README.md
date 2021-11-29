@@ -5,6 +5,17 @@ Second user created new 3D model for 4" Waveshare HDMI displa. Original 3D model
 
 ***MY MANUAL IS CURRENTLY INCOMPLETED. I WORKING ON IT***
 
+Manual Content
+1. [ My changes ](#my_changes)
+1. [ 3D model ](#3d_model)
+2. [ HW parts ](#hw_parts)
+3. [ HW construction ](#hw_construction)
+4. [ Instalation ](#instalation)
+
+---
+<a name="my_changes"></a>
+# My changes
+
 My changes, all otested on the RPI ZERO:
 - added pause video, when is button not pulled.
 - added mudde audio amplifier if is button not pulled
@@ -16,38 +27,77 @@ My changes, all otested on the RPI ZERO:
 - added space for USB port in the 3D model, and script for autocopy movie from USB mass storage devices to RPI 
 
 ---
-3D model
----
-[here](https://www.thingiverse.com/thing:5147344)
+<a name="3d_model"></a>
+# 3D model
+
+My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com/thing:5147344)
 
 ---
-HW parts
----
+<a name="hw_parts"></a>
+# HW parts
+
 - 1k potentiometer [here](https://www.tme.eu/en/details/pc16bu-1k-lin/cond-plastic-single-turn-potentiometers/omeg/)
+<img src="docu/HW_parts/potentiometer.jpg" width="256"/>
+
 - 7x7mm switch [here](https://www.aliexpress.com/item/32704922363.html)
+<img src="docu/HW_parts/switch_7x7.jpg" width="256"/>
+
 - 4" HDMI Waveshare LCD 800x400 [here](https://rlx.sk/sk/9-5-lcd-display/5454-4inch-hdmi-lcd-800480-ips-waveshare-4-touch-screen-lcd-hdmi-interface-ips-screen-designed-for-raspberry-pi-12030.html)
+<img src="docu/HW_parts/lcd.jpg" width="256"/>
+
 - HDMI connector DIY [here](https://rpishop.cz/redukce/2176-waveshare-mini-hdmi-adapter-pro-diy-hdmi-kabel.html)
+<img src="docu/HW_parts/HDMI_connector.jpg" width="256"/>
+
 - MINI HDMI connector DIY [here](https://rpishop.cz/redukce/1205-waveshare-hdmi-adapter-pro-diy-hdmi-kabel-pravouhy.html)
+<img src="docu/HW_parts/micro_hdmi_connector.jpg" width="256"/>
+
 - HDMI cable DIY [here](https://rpishop.cz/hdmi/1209-waveshare-diy-hdmi-plochy-kabel-02m.html)
+<img src="docu/HW_parts/hdmi_cable.jpg" width="256"/>
+<img src="docu/HW_parts/hdmi_final.jpg" width="256"/>
+
 - speaker [here](https://rpishop.cz/reproduktory/1204-waveshare-8-5w-reproduktor.html)
+<img src="docu/HW_parts/speaker.jpg" width="256"/>
+
 - rpi zero [here](https://rpishop.cz/zero/632-raspberry-pi-zero.html)
+<img src="docu/HW_parts/RASP_PI_ZERO_00.png" width="256"/>
+
 - audio amplifier [here](https://rlx.sk/sk/audio-voice-boards-speech-recognition/3397-mono-25w-class-d-audio-amplifier-pam8302-adafruit-2130.html)
+<img src="docu/HW_parts/audio_amplifier.jpg" width="256"/>
+
 - capacitor 2.2uF/50V
+<img src="docu/HW_parts/capacitor.jpg" width="256"/>
+
 - screw M3 4x
+<img src="docu/HW_parts/screw.jpg" width="256"/>
+
 - switch 6x6mm 2x [here](https://www.tme.eu/en/details/tact-64k/microswitches-tact/ninigi/) **watch out for the length of the button**
+<img src="docu/HW_parts/button.jpg" width="256"/>
+
 - micro USB connector [here](https://www.aliexpress.com/item/32916571891.html?spm=a2g0o.productlist.0.0.284c68canDNCGE&algo_pvid=d8468b46-a429-405d-a448-26761076313c&algo_exp_id=d8468b46-a429-405d-a448-26761076313c-5&pdp_ext_f=%7B%22sku_id%22%3A%2266023288418%22%7D)
+<img src="docu/HW_parts/micro_usb.jpg" width="256"/>
+
 - PCB with micro USB connector [here](https://www.aliexpress.com/item/4000484202812.html?spm=a2g0o.productlist.0.0.52451297eW2VB6&algo_pvid=d8623308-0e8e-433a-b8c3-d0a98947ac72&aem_p4p_detail=202111260636579663439259216280013679493&algo_exp_id=d8623308-0e8e-433a-b8c3-d0a98947ac72-9&pdp_ext_f=%7B%22sku_id%22%3A%2210000002007513401%22%7D)
+<img src="docu/HW_parts/microUSB.jpg" width="256"/>
+
 - magnet circle 6x2mm
+<img src="docu/HW_parts/magnet.jpg" width="256"/>
+
 - 3mm LED
+<img src="docu/HW_parts/led.jpg" width="256"/>
+
 - USB A connector [here](https://www.aliexpress.com/item/4000806581109.html?spm=a2g0o.productlist.0.0.2c402a18K0POfK&algo_pvid=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d&algo_exp_id=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d-11&pdp_ext_f=%7B%22sku_id%22%3A%2210000008096938788%22%7D)
+<img src="docu/HW_parts/usbA.jpg" width="256"/>
+
+- Wires
 
 ---
-HW construction
----
+<a name="hw_construction"></a>
+# HW construction
+
 ***TODO***
 
-
-***Pinout***
+## Pinout
+<img src="docu/RPIpinout.jpg" width="768"/>
 
 Power switch
 ```
@@ -76,10 +126,10 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 ```
 
 ---
-Instalation
----
-1. Install OS to micro SD card. For install OS please use Raspberry PI installer [here](https://www.raspberrypi.com/software/)
+<a name="instalation"></a>
+# Instalation
 
+1. Install OS to micro SD card. For install OS please use Raspberry PI installer [here](https://www.raspberrypi.com/software/)
 2. Create a file before inserting the micro SD card **wpa_supplicant.conf** in **boot** partition and add to file
 ```
 country=US
@@ -92,7 +142,9 @@ network={
 }
 ```
 3. Create a empty file **ssh** before inserting the micro SD card in **boot** partition. For enable SSH server after booting linux
-4. Now you can insert microSD card to RPI and power on. After booting is raspberry-pi automatically connected to WI-FI, with SSH server
+4. Now you can insert microSD card to RPI and power on. After booting is raspberry-pi automatically connected to WI-FI, with SSH server. After booting you can see IP at the home screen
+<img src="docu/install/ip.jpg" width="768"/>
+
 5. **Update OS**
 ```
 sudo apt-get update
@@ -101,11 +153,15 @@ sudo rpi-update
 sudo apt-get upgrade
 sudo reboot
 ```
+
 6. **LCD driver**. go to **/boot/config.txt** and add next lines for enable LCD drivers. Save, and reboot RPI. Manual for installation  manual is [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
+
 ```
 sudo nano /boot/config.txt
 ```
+
 add to end file
+
 ```
 hdmi_group=2
 hdmi_mode=87
@@ -115,6 +171,7 @@ display_rotate=3
 hdmi_drive=1
 hdmi_force_hotplug=1
 ```
+
 7. **LCD driver.** Install drivers for LCD
 ```
 git clone https://github.com/waveshare/LCD-show.git
