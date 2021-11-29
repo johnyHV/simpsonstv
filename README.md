@@ -86,12 +86,13 @@ My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com
 <img src="docu/HW_parts/led.jpg" width="256"/>
 
 - USB A connector [here](https://www.aliexpress.com/item/4000806581109.html?spm=a2g0o.productlist.0.0.2c402a18K0POfK&algo_pvid=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d&algo_exp_id=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d-11&pdp_ext_f=%7B%22sku_id%22%3A%2210000008096938788%22%7D)
-<img src="docu/HW_parts/pin_header.jpg" width="256"/>
+<img src="docu/HW_parts/usbA.jpg" width="256"/>
 
 - Wires
+<img src="docu/HW_parts/wires.jpg" width="256"/>
 
 - long pin header 25mm, male, 2.54MM PITCH [here](https://www.aliexpress.com/item/32851444441.html)
-<img src="docu/HW_parts/usbA.jpg" width="256"/>
+<img src="docu/HW_parts/pin_header.jpg" width="256"/>
 
 ---
 <a name="hw_construction"></a>
@@ -135,6 +136,9 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 2. Connect switch to RPI. for RPI pause information
 <img src="docu/hw/RPI_switch.jpg" width="512"/>
 
+- one switch pole to GPIO26
+- second pole to GND
+
 3. Solder 4pcs long pin header male to RPI board, to connect power to LCD from RPI. long connectors are used for better air circulation, and cooling RPI. You can use heatsink for better cooling
 <img src="docu/hw/lcd_supply1.jpg" width="512"/>
 <img src="docu/hw/lcd_supply2.jpg" width="512"/>
@@ -144,11 +148,12 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 
 5. Connect audio amplifier to RPI
 <img src="docu/hw/audio2.jpg" width="512"/>
-A+ -> audio input -> RPI pin GPIO19
-A- -> audio GND -> RPI pin GND
-SD -> shut down -> RPI pin GPIO13
-Vin -> voltage input -> RPI pin +5V
-Gnd -> ground -> RPI pin GND
+
+- A+ -> audio input -> RPI pin GPIO19
+- A- -> audio GND -> RPI pin GND
+- SD -> shut down -> RPI pin GPIO13
+- Vin -> voltage input -> RPI pin +5V
+- Gnd -> ground -> RPI pin GND
 
 <img src="docu/hw/audio4.jpg" width="512"/>
 <img src="docu/hw/audio5.jpg" width="512"/>
@@ -169,6 +174,12 @@ Gnd -> ground -> RPI pin GND
 9. Micro USB connector male
 <img src="docu/microUSB.jfif" width="512"/>
 <img src="docu/hw/microusbmale.jpg" width="512"/>
+
+10. Button in VCR recorder. We need only 3 wire. One wire is common (GND). Second wire is for next movie, and next wire is for XXX function. solder and glue
+<img src="docu/hw/vcr2.jpg" width="512"/>
+<img src="docu/hw/vcr1.jpg" width="512"/>
+
+11. soldering USB A connector for USB masstorage devices. we need an old micro USB cable or micro USB connector and solder 4 wires
 
 ---
 <a name="instalation"></a>
