@@ -97,9 +97,15 @@ network={
 ```
 sudo apt-get update
 sudo apt-get upgrade
-rpi-update
+sudo rpi-update
+sudo apt-get upgrade
+sudo reboot
 ```
-5. **LCD driver**. go to **/boot/config.txt** and add next lines for enable LCD drivers. Save, and reboot RPI. Manual for installation  manual is [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
+6. **LCD driver**. go to **/boot/config.txt** and add next lines for enable LCD drivers. Save, and reboot RPI. Manual for installation  manual is [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
+```
+sudo nano /boot/config.txt
+```
+add to end file
 ```
 hdmi_group=2
 hdmi_mode=87
@@ -109,50 +115,52 @@ display_rotate=3
 hdmi_drive=1
 hdmi_force_hotplug=1
 ```
-6. **LCD driver.** Install drivers for LCD
+7. **LCD driver.** Install drivers for LCD
 ```
 git clone https://github.com/waveshare/LCD-show.git
 cd LCD-show/
 chmod +x LCD4-800x480-show
-./LCD4-800x480-show
+sudo ./LCD4-800x480-show
 ```
-7. **Enable audio.** add to file **/boot/config.txt**
+8. **Enable audio.** add to file **/boot/config.txt**
+```
+sudo nano /boot/config.txt
+```
+add to end file
 ```
 dtparam=audio=on
 dtoverlay=audremap,enable_jack,pins_18_19
 ```
-8. **Enable audio.** Update file **/etc/rc.local**
+9. **Enable audio.** Update file **/etc/rc.local**
+```
+sudo nano /etc/rc.local
+```
+add to end file, before **exit 0** line
 ```
 raspi-gpio set 18 op dl
 raspi-gpio set 19 op a5 
 raspi-gpio set 8 a2
 raspi-gpio set 7 a2
 ```
-9. Update **/boot/cmdline.txt**
+10. Update **/boot/cmdline.txt**
+```
+sudo nano /boot/cmdline.txt
+```
+my file contain
 ```
 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash fbcon=map:10 fbcon=font:ProFont6x11
 ```
-10. **Install package to OS**
+11. **Install package to OS**
 ```
 sudo apt-get install omxplayer git mc screen rsync
 ```
-11. **Clone repository**
+12. **Clone repository**
 ```
 cd ~
 git clone https://github.com/johnyHV/simpsonstv
+cd simpsonstv
 ```
-12. Now we need convert video file to **mp4** format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer. You can use different SW for converting video file. 
-```
-~/simpsonstv/video/
-sudo python encode.py
-```
-13. **Copy video to RPI**. For example, you can use **scp** or **winscp**, for copy files via ssfp to RPI. Directory for video
-```
-~/simpsonstv/videos
-```
-or you can use the USB mass storage devices to copy the video (step 18)
-
-14. **Service**. Service for management buttons
+13. **Service**. Service for management buttons
 ```
 sudo nano /etc/systemd/system/tvbutton.service
 ```
@@ -170,7 +178,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-15. **Service**. Service for management video player
+14. **Service**. Service for management video player
 ```
 sudo nano /etc/systemd/system/tvplayer.service
 ```
@@ -188,16 +196,11 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-16. **Service**. Enable services
-```
-sudo systemctl enable tvbutton.service
-sudo systemctl enable tvplayer.service
-```
-17. **Update permission for script**
+15. **Update permission for script**
 ```
 sudo chmod +x /home/pi/simpsonstv/dbuscontrol.sh
 ```
-18. **Version with USB**. Service for auto copy files from USB mass storage devices to RPI flash drive. 
+16. **Version with USB**. Service for auto copy files from USB mass storage devices to RPI flash drive. 
 ```
 sudo nano /etc/systemd/system/tvautocopy.service
 ```
@@ -215,14 +218,30 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-19. **Version with USB**. Enable autocopy service
+17. **Version with USB**. Enable autocopy service
 ```
 sudo chmod +x /home/pi/simpsonstv/autocopy.sh
+```
+18. **Service**. Enable services
+```
+sudo systemctl enable tvbutton.service
+sudo systemctl enable tvplayer.service
 sudo systemctl enable tvautocopy.service
 ```
-20. **Reboot system**
+19. **Reboot system**
 ```
 sudo reboot
 ```
-21. **Copy movie from USB**. We need create a folder **simpsonstv** on the USB key in root, and store movies to this folder. After booting linux, and insert USB key is automaticly started script for copy movies from FLASH drive to micro SD card. the LED near the USB port lights up during the copying process.
+20. Now we need convert video file to **mp4** format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer. You can use different SW for converting video file. 
+```
+~/simpsonstv/video/
+sudo python encode.py
+```
+21. **Copy video to RPI**. 
+**Copy via network** For example, you can use **scp** or **winscp**, for copy files via network sfp to RPI. Directory for video
+```
+~/simpsonstv/videos
+```
+**Copy movie from USB**. We need create a folder **simpsonstv** on the USB key in root, and store movies to this folder. After booting linux, and insert USB key is automaticly started script for copy movies from FLASH drive to micro SD card. the LED near the USB port lights up during the copying process. When copying is complete, the LED will turn off and you can disconnect the USB key
+
 **IMAGE**
