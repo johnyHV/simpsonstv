@@ -37,11 +37,42 @@ HW parts
 - micro USB connector [here](https://www.aliexpress.com/item/32916571891.html?spm=a2g0o.productlist.0.0.284c68canDNCGE&algo_pvid=d8468b46-a429-405d-a448-26761076313c&algo_exp_id=d8468b46-a429-405d-a448-26761076313c-5&pdp_ext_f=%7B%22sku_id%22%3A%2266023288418%22%7D)
 - PCB with micro USB connector [here](https://www.aliexpress.com/item/4000484202812.html?spm=a2g0o.productlist.0.0.52451297eW2VB6&algo_pvid=d8623308-0e8e-433a-b8c3-d0a98947ac72&aem_p4p_detail=202111260636579663439259216280013679493&algo_exp_id=d8623308-0e8e-433a-b8c3-d0a98947ac72-9&pdp_ext_f=%7B%22sku_id%22%3A%2210000002007513401%22%7D)
 - magnet circle 6x2mm
+- 3mm LED
+- USB A connector [here](https://www.aliexpress.com/item/4000806581109.html?spm=a2g0o.productlist.0.0.2c402a18K0POfK&algo_pvid=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d&algo_exp_id=fe076f0d-f35f-4749-a6fb-6e73d8c0a93d-11&pdp_ext_f=%7B%22sku_id%22%3A%2210000008096938788%22%7D)
 
 ---
 HW construction
 ---
 ***TODO***
+
+
+***Pinout***
+
+Power switch
+```
+POWER SWITCH PIN A -> GPIO26
+POWER SWITCH PIN B -> GND
+```
+Audio amplifier
+```
+AUDIO AMPLIFIER SIGNAL -> GPIO19
+AUDIO AMPLIFIER SHUT DOWN -> GPIO13
+AUDIO AMPLIFIER POWER -> +5V
+AUDIO AMPLIFIER GROUND -> GND
+```
+Buttons
+```
+BUTTON NEXT VIDEO PIN A -> GPIO6
+BUTTON NEXT VIDEO PIN B -> GND
+
+BUTTON XXX PIN A -> GPIO5
+BUTTON XXX PIN B -> GND
+```
+LED
+```
+LED FOR INDICATE USB COMMUNICATION ANODA -> GPIO27
+LED FOR INDICATE USB COMMUNICATION KATODA -> GND
+```
 
 ---
 Instalation
@@ -100,14 +131,14 @@ console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator
 ```
 10. **Install package to OS**
 ```
-sudo apt-get install omxplayer git mc screen
+sudo apt-get install omxplayer git mc screen rsync
 ```
 11. **Clone repository**
 ```
 cd ~
 git clone https://github.com/johnyHV/simpsonstv
 ```
-12. Now we need convert video to **mp4** video format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer
+12. Now we need convert video to **mp4** video format. For this exist python script encode.py stored in **~/simpsonstv/video/**. Video file you can convert on RPI (but it's very tedious and slow) or on the your computer. You can use different SW for converting video file.
 ```
 ~/simpsonstv/video/
 sudo python encode.py
@@ -161,7 +192,30 @@ sudo systemctl enable tvplayer.service
 ```
 sudo chmod +x /home/pi/simpsonstv/dbuscontrol.sh
 ```
-19. **Reboot system**
+18. **Version with USB**. Service for autocopy files from USB mass storage devices to RPI flash drive
+```
+sudo nano /etc/systemd/system/tvautocopy.service
+```
+and insert to file
+```
+[Unit]
+Description=tvbutton
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/simpsonstv/
+ExecStart=/usr/bin/python /home/pi/simpsonstv/autocopy.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+19. **Version with USB**. Enable autocopy service
+```
+sudo chmod +x /home/pi/simpsonstv/autocopy.sh
+sudo systemctl enable tvautocopy.service
+```
+20. **Reboot system**
 ```
 sudo reboot
 ```
