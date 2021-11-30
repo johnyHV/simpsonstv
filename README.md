@@ -26,6 +26,9 @@ My changes, all otested on the RPI ZERO:
 - design improvement. is more solid
 - added space for USB port in the 3D model, and script for autocopy movie from USB mass storage devices to RPI 
 
+# TODO
+- add continue playing the last movie
+
 ---
 <a name="3d_model"></a>
 # 3D model
