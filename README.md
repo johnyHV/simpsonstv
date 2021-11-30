@@ -125,9 +125,10 @@ BUTTON XXX PIN B -> GND
 ```
 LED
 ```
-LED FOR INDICATE USB COMMUNICATION ANODA -> GPIO27
-LED FOR INDICATE USB COMMUNICATION KATODA -> GND
+LED FOR INDICATE USB COMMUNICATION ANODE -> GPIO27
+LED FOR INDICATE USB COMMUNICATION CATODE -> GND
 ```
+
 # Soldering and connecting components
 1. Connect switch to LCD display (for enable/disable blacklight). Switch the switch on the LCD to the off position 
 <img src="docu/hw/LCD_1.jpg" width="512"/>
@@ -136,8 +137,10 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 2. Connect switch to RPI. for RPI pause information
 <img src="docu/hw/RPI_switch.jpg" width="512"/>
 
+```
 - one switch pole to GPIO26
 - second pole to GND
+```
 
 3. Solder 4pcs long pin header male to RPI board, to connect power to LCD from RPI. long connectors are used for better air circulation, and cooling RPI. You can use heatsink for better cooling
 <img src="docu/hw/lcd_supply1.jpg" width="512"/>
@@ -149,11 +152,13 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 5. Connect audio amplifier to RPI
 <img src="docu/hw/audio2.jpg" width="512"/>
 
+```
 - A+ -> audio input -> RPI pin GPIO19
 - A- -> audio GND -> RPI pin GND
 - SD -> shut down -> RPI pin GPIO13
 - Vin -> voltage input -> RPI pin +5V
 - Gnd -> ground -> RPI pin GND
+```
 
 <img src="docu/hw/audio4.jpg" width="512"/>
 <img src="docu/hw/audio5.jpg" width="512"/>
@@ -166,6 +171,7 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 <img src="docu/hw/hdmi2.jpg" width="512"/>
 
 8.current view of HW
+
 <img src="docu/hw/total.jpg" width="512"/>
 
 9. Micro USB connector female
@@ -179,7 +185,55 @@ LED FOR INDICATE USB COMMUNICATION KATODA -> GND
 <img src="docu/hw/vcr2.jpg" width="512"/>
 <img src="docu/hw/vcr1.jpg" width="512"/>
 
-11. soldering USB A connector for USB masstorage devices. we need an old micro USB cable or micro USB connector and solder 4 wires
+11. Soldering USB A connector for USB masstorage devices. We need an old micro USB cable or micro USB connector and solder 4 wires. VCC, DATA+, DATA-, GND
+<img src="docu/usb_wire_pinout.jpg" width="512"/>
+<img src="docu/hw/usbA.jpg" width="512"/>
+
+12. Soldering LED for indication of copying files from USB stick to microSD card. 
+<img src="docu/led.jpg" width="512"/>
+<img src="docu/hw/LED.jpg" width="512"/>
+
+13. And soldering LED to RPI PCB. When maximum output voltage from GPIO is 3.3V and maximum current is 16mA, then we don't need resistor for current limitation. But you can use it if you want
+
+
+```
+LED Anode -> GPIO27
+LED Catode -> GND
+```
+
+<img src="docu/hw/LED_RPI.jpg" width="512"/>
+
+14. Stick the VCR to the top of the box with the glue
+
+<img src="docu/hw/vcr_case.jpg" width="512"/>
+
+15. Now we can soldering wire from VCR to RPI PCB
+
+```
+Wire from button for next movie -> GPIO6
+Common wire -> GND
+Wire from button for XXX -> GPIO5
+```
+
+<img src="docu/hw/vcr_rpi.jpg" width="512"/>
+
+16. Stick the PCB with micro USB connector to the box with the glue
+<img src="docu/hw/microusb_box.jpg" width="512"/>
+
+17. Stick the PCB with micro A connector to the box with the glue
+<img src="docu/hw/usb_box.jpg" width="512"/>
+
+18. Stick the LED to the box with the glue
+<img src="docu/hw/led_box.jpg" width="512"/>
+
+19. Stick the magnet to the box with the glue
+<img src="docu/hw/magnet_box.jpg" width="512"/>
+
+20. Connect micro USB connector with power supply to RPI
+<img src="docu/hw/microusb_psu_rpi.jpg" width="512"/>
+
+21. Connect micro USB connector for USB stick to RPI
+<img src="docu/hw/usba_stick_rpi.jpg" width="512"/>
 
 ---
 <a name="instalation"></a>
