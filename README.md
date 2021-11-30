@@ -190,7 +190,7 @@ LED FOR INDICATE USB COMMUNICATION CATODE -> GND
 <img src="docu/hw/usbA.jpg" width="512"/>
 
 12. Soldering LED for indication of copying files from USB stick to microSD card. 
-<img src="docu/led.jpg" width="512"/>
+<img src="docu/led.png" width="512"/>
 <img src="docu/hw/LED.jpg" width="512"/>
 
 13. And soldering LED to RPI PCB. When maximum output voltage from GPIO is 3.3V and maximum current is 16mA, then we don't need resistor for current limitation. But you can use it if you want
