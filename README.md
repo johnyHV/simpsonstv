@@ -28,6 +28,8 @@ My changes, all otested on the RPI ZERO:
 
 # TODO
 - add continue playing the last movie
+- 3D model for tv base stand
+- 3D model for antena
 
 ---
 <a name="3d_model"></a>
@@ -232,17 +234,22 @@ Wire from button for XXX -> GPIO5
 <img src="docu/hw/vcr_rpi1.jpg" width="512"/>
 <img src="docu/hw/vcr_rpi2.jpg" width="512"/>
 
-19. Stick the LED to the box with the glue
+20. Stick the LED to the box with the glue
 <img src="docu/hw/led_box.jpg" width="512"/>
 
-19. Stick the magnet to the box with the glue
+21. Stick the magnet to the box with the glue
 <img src="docu/hw/magnet_box.jpg" width="512"/>
 
-20. Connect micro USB connector with power supply to RPI
+22. Connect micro USB connector with power supply to RPI
 <img src="docu/hw/microusb_psu_rpi.jpg" width="512"/>
 
-21. Connect micro USB connector for USB stick to RPI
+23. Connect micro USB connector for USB stick to RPI
 <img src="docu/hw/usba_stick_rpi.jpg" width="512"/>
+
+24. Final pictures
+<img src="docu/hw/final1.jpg" width="512"/>
+<img src="docu/hw/final2.jpg" width="512"/>
+<img src="docu/hw/final3.jpg" width="512"/>
 
 ---
 <a name="instalation"></a>
@@ -420,4 +427,4 @@ sudo python encode.py
 ```
 **Copy movie from USB**. We need create a folder **simpsonstv** on the USB key in root, and store movies to this folder. After booting linux, and insert USB key is automaticly started script for copy movies from FLASH drive to micro SD card. the LED near the USB port lights up during the copying process. When copying is complete, the LED will turn off and you can disconnect the USB key
 
-**IMAGE**
+<img src="docu/hw/usb_stick_port.jpg" width="512"/>
