@@ -206,19 +206,11 @@ LED Catode -> GND
 
 <img src="docu/hw/LED_RPI.jpg" width="512"/>
 
-14. Stick the VCR to the top of the box with the glue
-
+14. Stick the VCR to the top of the box with the super glue
 <img src="docu/hw/vcr_case.jpg" width="512"/>
 
-15. Now we can soldering wire from VCR to RPI PCB
-
-```
-Wire from button for next movie -> GPIO6
-Common wire -> GND
-Wire from button for XXX -> GPIO5
-```
-
-<img src="docu/hw/vcr_rpi.jpg" width="512"/>
+15. Stick the speaker holder to the box with the super glue
+<img src="docu/hw/speaker_holder.jpg" width="512"/>
 
 16. Stick the PCB with micro USB connector to the box with the glue
 <img src="docu/hw/microusb_box.jpg" width="512"/>
@@ -226,7 +218,21 @@ Wire from button for XXX -> GPIO5
 17. Stick the PCB with micro A connector to the box with the glue
 <img src="docu/hw/usb_box.jpg" width="512"/>
 
-18. Stick the LED to the box with the glue
+18. Stick the speaker to the box with the glue
+<img src="docu/hw/speaker.jpg" width="512"/>
+
+19. Now we can soldering wire from VCR to RPI PCB
+
+```
+Wire from button for next movie -> GPIO6
+Common wire -> GND
+Wire from button for XXX -> GPIO5
+```
+
+<img src="docu/hw/vcr_rpi1.jpg" width="512"/>
+<img src="docu/hw/vcr_rpi2.jpg" width="512"/>
+
+19. Stick the LED to the box with the glue
 <img src="docu/hw/led_box.jpg" width="512"/>
 
 19. Stick the magnet to the box with the glue
@@ -382,7 +388,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/home/pi/simpsonstv/
-ExecStart=/usr/bin/python /home/pi/simpsonstv/autocopy.sh
+ExecStart=/home/pi/simpsonstv/autocopy.sh
 Restart=always
 
 [Install]
