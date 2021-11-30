@@ -6,9 +6,9 @@ usb_path="/simpsonstv/"
 LED_PIN="27"
 log_file_name="simpsontv_log.txt"
 
-echo "${LED_PIN}" > /sys/class/gpio/export
-echo "out" > /sys/class/gpio/gpio${LED_PIN}/direction
-echo "0" > /sys/class/gpio/gpio${LED_PIN}/value
+echo $LED_PIN > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio${LED_PIN}/direction
+echo 0 > /sys/class/gpio/gpio${LED_PIN}/value
 
 while true
 do
@@ -20,7 +20,7 @@ do
                 echo "USB not found"
         else
                 echo "Found USB drive ${path}"
-                echo "1" > /sys/class/gpio/gpio${LED_PIN}/value
+                echo 1 > /sys/class/gpio/gpio${LED_PIN}/value
 
                 if [ -d "${path}${usb_path}" ]
                 then
@@ -31,6 +31,6 @@ do
                         echo "Folder doesn't exist"
                 fi
                 umount ${path}
-                echo "0" > /sys/class/gpio/gpio${LED_PIN}/value
+                echo 0 > /sys/class/gpio/gpio${LED_PIN}/value
         fi
 done
