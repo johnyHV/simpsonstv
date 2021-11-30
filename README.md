@@ -3,14 +3,13 @@ The original project was created by the user buba447. Manual is [here](https://w
 
 Second user created new 3D model for 4" Waveshare HDMI displa. Original 3D model is [here](https://www.thingiverse.com/thing:5019648)
 
-***MY MANUAL IS CURRENTLY INCOMPLETED. I WORKING ON IT***
-
 Manual Content
 1. [ My changes ](#my_changes)
 1. [ 3D model ](#3d_model)
 2. [ HW parts ](#hw_parts)
 3. [ HW construction ](#hw_construction)
 4. [ Instalation ](#instalation)
+5. [ Image ] (#image)
 
 ---
 <a name="my_changes"></a>
@@ -428,3 +427,8 @@ sudo python encode.py
 **Copy movie from USB**. We need create a folder **simpsonstv** on the USB key in root, and store movies to this folder. After booting linux, and insert USB key is automaticly started script for copy movies from FLASH drive to micro SD card. the LED near the USB port lights up during the copying process. When copying is complete, the LED will turn off and you can disconnect the USB key
 
 <img src="docu/hw/usb_stick_port.jpg" width="512"/>
+
+---
+<a name="my_changes"></a>
+# Image
+We can download my RPI ZERO image from my [gdrive](https://drive.google.com/drive/folders/1mnJnrXVBaZO_8UrxD8tn1eNyA690npIP?usp=sharing). I don't tested if is this image compatible with ZERO W or ZERO 2 W
