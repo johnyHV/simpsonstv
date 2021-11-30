@@ -377,7 +377,7 @@ sudo nano /etc/systemd/system/tvautocopy.service
 and insert to file
 ```
 [Unit]
-Description=tvbutton
+Description=tvautocopy
 After=network.target
 
 [Service]
