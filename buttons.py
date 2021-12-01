@@ -53,6 +53,9 @@ while (True):
     time.sleep(0.3)
 
     input = not GPIO.input(26)
+    inputButtonRight = GPIO.input(6)
+    inputButtonLeft = GPIO.input(5)
+
     if input != screen_on:
         screen_on = input
         if screen_on:
@@ -60,16 +63,24 @@ while (True):
         else:
             turnOffScreen()
 
-    inputButtonRight = GPIO.input(6)
-    if inputButtonRight != buttonRight:
-        buttonRight = inputButtonRight
-        if buttonRight:
-            playNextVideo()
+    # check push left and right button
+    if ((inputButtonLeft != buttonLeft) and (inputButtonRight != buttonRight)):
+        inputButtonLeft != buttonLeft
+        inputButtonRight != buttonRight
+        if (buttonLeft and buttonRight):
+            shutdownSystem()
 
-    inputButtonLeft = GPIO.input(5)
-    if inputButtonLeft != buttonLeft:
-        buttonLeft = inputButtonLeft
-        if buttonLeft:
-            rewidVideo()
-            #shutdownSystem()
+    else:
+        # check push right button
+        if inputButtonRight != buttonRight:
+            buttonRight = inputButtonRight
+            if buttonRight:
+                playNextVideo()
+
+        # check push left button
+        if inputButtonLeft != buttonLeft:
+            buttonLeft = inputButtonLeft
+            if buttonLeft:
+                rewidVideo()
+
 
