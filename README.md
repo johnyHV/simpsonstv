@@ -9,7 +9,8 @@ Manual Content
 2. [ HW parts ](#hw_parts)
 3. [ HW construction ](#hw_construction)
 4. [ Instalation ](#instalation)
-5. [ Image ] (#image)
+5. [ Image ](#images_url)
+6. [ How to use ](#howtouse)
 
 ---
 <a name="my_changes"></a>
@@ -101,8 +102,6 @@ My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com
 ---
 <a name="hw_construction"></a>
 # HW construction
-
-***TODO***
 
 ## Pinout
 <img src="docu/RPIpinout.jpg" width="768"/>
@@ -429,6 +428,12 @@ sudo python encode.py
 <img src="docu/hw/usb_stick_port.jpg" width="512"/>
 
 ---
-<a name="my_changes"></a>
+<a name="images_url"></a>
 # Image
 We can download my RPI ZERO image from my [gdrive](https://drive.google.com/drive/folders/1mnJnrXVBaZO_8UrxD8tn1eNyA690npIP?usp=sharing). I don't tested if is this image compatible with ZERO W or ZERO 2 W
+
+---
+<a name="howtouse"></a>
+# How to use
+
+*** TODO ***
