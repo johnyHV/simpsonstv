@@ -434,9 +434,9 @@ sudo python encode.py
 # Image
 We can download my RPI ZERO image from my [gdrive](https://drive.google.com/drive/folders/1mnJnrXVBaZO_8UrxD8tn1eNyA690npIP?usp=sharing). I don't tested if is this image compatible with ZERO W or ZERO 2 W
 
-OS: raspberry-pi OS 32bit
-username: pi
-password: raspberry
+- OS: raspberry-pi OS 32bit
+- username: pi
+- password: raspberry
 
 ---
 <a name="howtouse"></a>
