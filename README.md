@@ -28,7 +28,6 @@ My changes, all otested on the RPI ZERO:
 
 # TODO
 - add continue playing the last movie
-- 3D model for tv base stand
 - 3D model for antena
 
 ---
