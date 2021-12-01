@@ -34,3 +34,5 @@ do
                 echo 0 > /sys/class/gpio/gpio${LED_PIN}/value
         fi
 done
+
+# EOF
