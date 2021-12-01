@@ -1,7 +1,9 @@
 
 The original project was created by the user buba447. Manual is [here](https://withrow.io/simpsons-tv-build-guide) and source is [here](https://github.com/buba447/simpsonstv). Original 3D model is [here](https://www.thingiverse.com/thing:4943159)
 
-Second user created new 3D model for 4" Waveshare HDMI displa. Original 3D model is [here](https://www.thingiverse.com/thing:5019648)
+Second user created new 3D model for 4" Waveshare HDMI display. Original 3D model is [here](https://www.thingiverse.com/thing:5019648)
+
+Presentation video is [here](https://www.youtube.com/watch?v=3tjLVFxXQzM)
 
 ---
 # Manual Content
@@ -17,7 +19,7 @@ Second user created new 3D model for 4" Waveshare HDMI displa. Original 3D model
 <a name="my_changes"></a>
 # My changes
 
-My changes, all otested on the RPI ZERO:
+My changes, all tested on the RPI ZERO:
 - added pause video, when is button not pulled.
 - added mute audio amplifier if is button not pulled
 - minor improvements to 3D models
@@ -32,7 +34,6 @@ My changes, all otested on the RPI ZERO:
 
 # TODO
 - add continue playing the last movie
-- 3D model for antena
 
 ---
 <a name="3d_model"></a>
