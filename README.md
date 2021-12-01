@@ -3,14 +3,15 @@ The original project was created by the user buba447. Manual is [here](https://w
 
 Second user created new 3D model for 4" Waveshare HDMI displa. Original 3D model is [here](https://www.thingiverse.com/thing:5019648)
 
-Manual Content
+---
+# Manual Content
 1. [ My changes ](#my_changes)
-1. [ 3D model ](#3d_model)
-2. [ HW parts ](#hw_parts)
-3. [ HW construction ](#hw_construction)
-4. [ Instalation ](#instalation)
-5. [ Image ](#images_url)
-6. [ How to use ](#howtouse)
+2. [ 3D model ](#3d_model)
+3. [ HW parts ](#hw_parts)
+4. [ HW construction ](#hw_construction)
+5. [ Instalation ](#instalation)
+6. [ Image ](#images_url)
+7. [ How to use ](#howtouse)
 
 ---
 <a name="my_changes"></a>
@@ -442,4 +443,4 @@ We can download my RPI ZERO image from my [gdrive](https://drive.google.com/driv
 <a name="howtouse"></a>
 # How to use
 
-*** TODO ***
+***TODO***
