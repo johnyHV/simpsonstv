@@ -18,13 +18,16 @@ Manual Content
 
 My changes, all otested on the RPI ZERO:
 - added pause video, when is button not pulled.
-- added mudde audio amplifier if is button not pulled
+- added mute audio amplifier if is button not pulled
 - minor improvements to 3D models
 - added button to 3D model VCR
 - used different speaker
-- used 4" HDMI waveshare LCD [here](https://www.waveshare.com/wiki/4inch_HDMI_LCD)
 - design improvement. is more solid
 - added space for USB port in the 3D model, and script for autocopy movie from USB mass storage devices to RPI 
+- added feature "next movie" for right button on the VCR
+- added feature rewid 15second back for the left button on the VCR
+- added usb A connector for autocopy movie from USB flash drive to micro SD card
+- new scriprt and service for autocopy movie from USB stick to micro SD card
 
 # TODO
 - add continue playing the last movie
