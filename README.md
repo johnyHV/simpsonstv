@@ -347,39 +347,11 @@ cd simpsonstv
 ```
 13. **Service**. Service for management buttons
 ```
-sudo nano /etc/systemd/system/tvbutton.service
-```
-and insert to file
-```
-[Unit]
-Description=tvbutton
-After=network.target
-
-[Service]
-WorkingDirectory=/home/pi/simpsonstv/
-ExecStart=/usr/bin/python /home/pi/simpsonstv/buttons.py
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
+sudo cp simpsonstv/services/tvbutton.service /etc/systemd/system/tvbutton.service
 ```
 14. **Service**. Service for management video player
 ```
-sudo nano /etc/systemd/system/tvplayer.service
-```
-and insert to file
-```
-[Unit]
-Description=tvplayer
-After=network.target
-
-[Service]
-WorkingDirectory=/home/pi/simpsonstv/
-ExecStart=/usr/bin/python /home/pi/simpsonstv/player.py
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
+sudo cp simpsonstv/services/tvplayer.service /etc/systemd/system/tvplayer.service
 ```
 15. **Update permission for script**
 ```
@@ -387,21 +359,7 @@ sudo chmod +x /home/pi/simpsonstv/dbuscontrol.sh
 ```
 16. **Version with USB**. Service for auto copy files from USB mass storage devices to RPI flash drive. 
 ```
-sudo nano /etc/systemd/system/tvautocopy.service
-```
-and insert to file
-```
-[Unit]
-Description=tvautocopy
-After=network.target
-
-[Service]
-WorkingDirectory=/home/pi/simpsonstv/
-ExecStart=/home/pi/simpsonstv/autocopy.sh
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
+sudo cp simpsonstv/services/tvautocopy.service /etc/systemd/system/tvautocopy.service
 ```
 17. **Version with USB**. Enable autocopy service
 ```
