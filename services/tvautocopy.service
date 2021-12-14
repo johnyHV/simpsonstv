@@ -1,0 +1,11 @@
+[Unit]
+Description=tvautocopy
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/simpsonstv/
+ExecStart=/home/pi/simpsonstv/autocopy.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
