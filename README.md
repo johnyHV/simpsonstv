@@ -107,6 +107,9 @@ My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com
 <a name="hw_construction"></a>
 # HW construction
 
+Approximate schematic. Missing USB and LCD parts
+<img src="docu/block schematic_schem.png" width="768"/>
+
 ## Pinout
 <img src="docu/RPIpinout.jpg" width="768"/>
 
