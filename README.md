@@ -255,6 +255,7 @@ Wire from button for XXX -> GPIO5
 <img src="docu/hw/final3.jpg" width="512"/>
 
 ---
+
 <a name="instalation"></a>
 # Instalation
 
@@ -273,6 +274,24 @@ network={
 3. Create a empty file **ssh** before inserting the micro SD card in **boot** partition. For enable SSH server after booting linux
 4. Now you can insert microSD card to RPI and power on. After booting is raspberry-pi automatically connected to WI-FI, with SSH server. After booting you can see IP at the home screen
 <img src="docu/install/ip.jpg" width="768"/>
+
+Now we can use 2 method for instalation and configuration OS. First method is continue to steps 5 and more.
+
+Second method is use scripts for install all neccesary package and configuring OS. This method skip steps 5 -> 18. Method is not fully tested, is only experimental.
+```
+sudo apt-get install git
+cd ~
+git clone git clone https://github.com/johnyHV/simpsonstv
+cd simpsonstv
+sudo ./install_01.sh
+```
+
+After reboot RPI
+```
+cd simpsonstv
+sudo ./ install_02.sh
+```
+If you use this method, then after previous commands please continue to [ step 19 ](#step_19).
 
 5. **Update OS**
 ```
@@ -372,6 +391,7 @@ sudo systemctl enable tvbutton.service
 sudo systemctl enable tvplayer.service
 sudo systemctl enable tvautocopy.service
 ```
+<a name="step_19"></a>
 19. **Reboot system**
 ```
 sudo reboot
