@@ -284,7 +284,7 @@ Second method is use scripts for install all neccesary package and configuring O
 ```
 sudo apt-get install git
 cd ~
-git clone git clone https://github.com/johnyHV/simpsonstv
+git clone https://github.com/johnyHV/simpsonstv
 cd simpsonstv
 sudo ./install_01.sh
 ```
