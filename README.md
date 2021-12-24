@@ -155,6 +155,7 @@ LED FOR INDICATE USB COMMUNICATION CATODE -> GND
 
 4. Connect speaker to potentiometer and audio amplifier.
 <img src="docu/hw/audio1.jpg" width="512"/>
+<img src="docu/hw/audio6.jpg" width="512"/>
 
 5. Connect audio amplifier to RPI
 <img src="docu/hw/audio2.jpg" width="512"/>
