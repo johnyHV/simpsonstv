@@ -70,7 +70,7 @@ My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com
 - rpi zero [here](https://rpishop.cz/zero/632-raspberry-pi-zero.html)
 <img src="docu/HW_parts/RASP_PI_ZERO_00.png" width="256"/>
 
-- audio amplifier [here](https://rlx.sk/sk/audio-voice-boards-speech-recognition/3397-mono-25w-class-d-audio-amplifier-pam8302-adafruit-2130.html)
+- audio amplifier PAM8302 [here](https://rlx.sk/sk/audio-voice-boards-speech-recognition/3397-mono-25w-class-d-audio-amplifier-pam8302-adafruit-2130.html)
 <img src="docu/HW_parts/audio_amplifier.jpg" width="256"/>
 
 - capacitor 2.2uF/50V
