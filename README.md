@@ -39,7 +39,7 @@ My changes, all tested on the RPI ZERO:
 <a name="3d_model"></a>
 # 3D model
 
-My 3D model is stored on the thingiverse page [here](https://www.thingiverse.com/thing:5147344)
+My 3D model is stored on the [thingiverse](https://www.thingiverse.com/thing:5147344) page or from [prusaprinters](https://www.prusaprinters.org/prints/90361-simpsons-tv) page
 
 ---
 <a name="hw_parts"></a>
