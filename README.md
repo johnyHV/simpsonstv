@@ -109,6 +109,7 @@ My 3D model is stored on the [thingiverse](https://www.thingiverse.com/thing:514
 
 Approximate schematic. Missing USB and LCD parts
 <img src="docu/block schematic_schem.png" width="768"/>
+<img src="docu/block schematic_bb.png" width="768"/>
 
 ## Pinout
 <img src="docu/RPIpinout.jpg" width="768"/>
