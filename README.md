@@ -31,6 +31,7 @@ My changes, all tested on the RPI ZERO:
 - added feature rewid 15second back for the left button on the VCR
 - added usb A connector for autocopy movie from USB flash drive to micro SD card
 - new scriprt and service for autocopy movie from USB stick to micro SD card
+- added second player script player-playlist.py. This script saving last played video, and after reboot can continue playing last video 
 
 # TODO
 - add continue playing the last movie
@@ -414,6 +415,13 @@ sudo python encode.py
 
 <img src="docu/hw/usb_stick_port.jpg" width="512"/>
 
+22. **Two player scripts** There are currently two existing scripts for two-player functionality. The first script, player.py, is standard and plays random videos. The second script, player-playlist.py, saves the last played video, allowing the device to continue from where it left off after a reboot. If opting for the second script, it's necessary to rename the script
+```
+cd simpsonstv
+mv player.py player-random.py
+mv player-playlist.py player.py
+sudo systemctl restart tvplayer.service
+```
 ---
 <a name="images_url"></a>
 # Image
